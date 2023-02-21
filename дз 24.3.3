@@ -1,0 +1,69 @@
+import 
+import json
+
+res = requests.get(f"https://petstore.swagger.io/v2/pet/findByStatus", params={'status': 'available'}, headers={'accept': 'application/json'})
+
+print (res.status_code)
+print (res.text)
+print(res.json())
+print(type(res.json()))
+
+= = {
+  "id": 126,
+  "category": {
+    "id": 23,
+    "name": "Cater"
+  },
+  "name": "Gena",
+  "photoUrls": [
+    "string"
+  ],
+  "tags": [
+    {
+      "id": 0,
+      "name": "string"
+    }
+  ],
+  "status": "available"
+}
+
+res = requests.post(f"https://petstore.swagger.io/v2/pet", headers={'accept': 'application/json', 'Content-Type': 'application/json'}, data=json.dumps(info_pet, ensure_ascii=False))
+
+print(res.status_code)
+print(res.text)
+print(res.json())
+print(type(res.json()))
+
+new_info_pet = {
+  "id": 126,
+  "category": {
+    "id": 23,
+    "name": "Cater"
+  },
+  "name": "Kitty",
+  "photoUrls": [
+    "string"
+  ],
+  "tags": [
+    {
+      "id": 0,
+      "name": "string"
+    }
+  ],
+  "status": "available"
+}
+
+
+res = requests.put(f"https://petstore.swagger.io/v2/pet", headers={'accept': 'application/json', 'Content-Type': 'application/json'}, data=json.dumps(new_info_pet, ensure_ascii=False))
+
+print(res.status_code)
+print(res.text)
+print(res.json())
+print(type(res.json()))
+
+res = requests.delete(f"https://petstore.swagger.io/v2/pet/128", headers={'accept': 'application/json', 'Content-Type': 'application/json'}, data=json.dumps(new_info_pet, ensure_ascii=False))
+
+print(res.status_code)
+print(res.text)
+print(res.json())
+print(type(res.json()))
